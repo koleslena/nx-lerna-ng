@@ -1,6 +1,6 @@
 {
   "name": "@mytest-koleslena/nx-lerna-ng",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publishConfig": {
     "access": "public"
   },
