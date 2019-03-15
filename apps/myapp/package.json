@@ -1,15 +1,5 @@
 {
   "name": "@mytest/myapp",
   "version": "0.0.5",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "gitHead": "7e868ba7643ac0f5efcaed7b7fc8c459079e3fb4"
+  "gitHead": "374aafd647c909fb983edc4f4d7f3ff2022d2078"
 }

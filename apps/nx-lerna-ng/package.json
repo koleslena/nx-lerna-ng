@@ -1,15 +1,5 @@
 {
   "name": "@mytest/nx-lerna-ng",
   "version": "0.0.5",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "gitHead": "d97bbb79530d54d39548ca52a63f9c090f213231"
+  "gitHead": "374aafd647c909fb983edc4f4d7f3ff2022d2078"
 }
