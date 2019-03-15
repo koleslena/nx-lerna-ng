@@ -1,8 +1,8 @@
 {
-  "name": "@mytest/nx-lerna-ng",
+  "name": "@mytest-koleslena/nx-lerna-ng",
   "version": "0.0.6",
   "publishConfig": {
     "access": "public"
-  }
+  },
   "gitHead": "f4d810305751eb8964b1c947af0c190df971c39d"
 }
