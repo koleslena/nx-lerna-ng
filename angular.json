@@ -1,0 +1,142 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "nx-lerna-ng": {
+      "root": "apps/nx-lerna-ng/",
+      "sourceRoot": "apps/nx-lerna-ng/src",
+      "projectType": "application",
+      "prefix": "nx-lerna-ng",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "less"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/nx-lerna-ng",
+            "index": "apps/nx-lerna-ng/src/index.html",
+            "main": "apps/nx-lerna-ng/src/main.ts",
+            "polyfills": "apps/nx-lerna-ng/src/polyfills.ts",
+            "tsConfig": "apps/nx-lerna-ng/tsconfig.app.json",
+            "assets": [
+              "apps/nx-lerna-ng/src/favicon.ico",
+              "apps/nx-lerna-ng/src/assets"
+            ],
+            "styles": ["apps/nx-lerna-ng/src/styles.less"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/nx-lerna-ng/src/environments/environment.ts",
+                  "with": "apps/nx-lerna-ng/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "nx-lerna-ng:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "nx-lerna-ng:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "nx-lerna-ng:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/nx-lerna-ng/tsconfig.app.json",
+              "apps/nx-lerna-ng/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/nx-lerna-ng/jest.config.js",
+            "tsConfig": "apps/nx-lerna-ng/tsconfig.spec.json",
+            "setupFile": "apps/nx-lerna-ng/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "nx-lerna-ng-e2e": {
+      "root": "apps/nx-lerna-ng-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/nx-lerna-ng-e2e/cypress.json",
+            "tsConfig": "apps/nx-lerna-ng-e2e/tsconfig.e2e.json",
+            "devServerTarget": "nx-lerna-ng:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "nx-lerna-ng:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/nx-lerna-ng-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "style": "less",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:library": {
+      "style": "less"
+    }
+  },
+  "defaultProject": "nx-lerna-ng"
+}
