@@ -1,5 +1,8 @@
 {
   "name": "@mytest/myapp",
   "version": "0.0.6",
-  "gitHead": "374aafd647c909fb983edc4f4d7f3ff2022d2078"
+  "publishConfig": {
+    "access": "public"
+  }
+  "gitHead": "f4d810305751eb8964b1c947af0c190df971c39d"
 }
